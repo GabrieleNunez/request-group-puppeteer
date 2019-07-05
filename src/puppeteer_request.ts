@@ -3,10 +3,19 @@ import { Request, BaseWebRequest } from 'request-group';
 import * as moment from 'moment';
 import * as puppeteer from 'puppeteer';
 
+/**
+ * This class simplifies creatinga puppeteer request and linking it to a puppeteer manager.
+ * Can additionally tie into the request-group library and be batched out
+ */
 export class PuppeteerRequest extends BaseWebRequest<puppeteer.Page> {
     protected puppeteerManager: PuppeteerManager;
     protected pageUrl: string;
 
+    /**
+     * Constructs the request with the specified url  and designated manager
+     * @param requestUrl The url we want to load
+     * @param puppeteerManager The manager that is going to be responsible for this page
+     */
     public constructor(requestUrl: string, puppeteerManager: PuppeteerManager) {
         super(requestUrl);
         this.puppeteerManager = puppeteerManager;
