@@ -11,7 +11,7 @@ npm install request-group-puppeteer
 ## Building
 ```bash
 git clone https://github.com/GabrieleNunez/request-group-puppeteer.git
-cd request-group-cheerio
+cd request-group-puppeteer
 npm install
 npm run build
 ```
