@@ -1,5 +1,4 @@
 import * as puppeteer from 'puppeteer';
-import { rejects } from 'assert';
 
 /**
  * Default launch options for puppeteer
