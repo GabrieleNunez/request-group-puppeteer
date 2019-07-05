@@ -1,10 +1,11 @@
 {
-  "name": "request_group_puppeteer",
+  "name": "request-group-puppeteer",
   "version": "1.0.0",
   "description": "Simplifies requesting for puppeteer instances and sending mulitple puppeteer request at the same time",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"Building\" && tsc && echo \"Completed\""
   },
   "repository": {
     "type": "git",
@@ -14,10 +15,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^12.0.12",
+    "@types/puppeteer": "^1.12.4",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.2"
