@@ -1,6 +1,6 @@
 {
   "name": "request-group-puppeteer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simplifies requesting for puppeteer instances and sending mulitple puppeteer request at the same time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,5 +33,18 @@
   "bugs": {
     "url": "https://github.com/GabrieleNunez/request-group-puppeteer/issues"
   },
-  "homepage": "https://github.com/GabrieleNunez/request-group-puppeteer#readme"
+  "homepage": "https://github.com/GabrieleNunez/request-group-puppeteer#readme",
+  "keywords": [
+      "puppeteer",
+      "request",
+      "web scraping",
+      "automation",
+      "web",
+      "internet",
+      "web page",
+      "page",
+      "batch",
+      "bulk",
+      "typescript"
+  ]
 }
