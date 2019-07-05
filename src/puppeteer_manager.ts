@@ -34,7 +34,10 @@ export const PUPPETEER_MANAGER_DEFAULT_NAVIGATION: puppeteer.NavigationOptions =
     timeout: 60000,
 };
 
-export default class PuppeteerManager {
+/**
+ * Puppeteer Manager is a class that helps simplify the creation of any puppeteer request. Provides a good starting point to just launch puppeteer instances
+ */
+export class PuppeteerManager {
     protected browser: puppeteer.Browser | null;
     protected isInit: boolean;
     protected viewportOptions: puppeteer.Viewport;
@@ -136,3 +139,5 @@ export default class PuppeteerManager {
         }
     }
 }
+
+export default PuppeteerManager;
