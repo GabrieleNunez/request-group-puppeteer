@@ -60,7 +60,9 @@ export class PuppeteerManager {
      * Launches the puppeteer browser with specific options
      * @param launchOptions
      */
-    public initialize(launchOptions?: puppeteer.LaunchOptions): Promise<void> {
+    public initialize(
+        launchOptions: puppeteer.LaunchOptions = PUPPETEER_MANAGER_DEFAULT_LAUNCH_OPTIONS,
+    ): Promise<void> {
         return new Promise((resolve): void => {
             puppeteer.launch(launchOptions).then((browser: puppeteer.Browser): void => {
                 this.browser = browser;
@@ -72,7 +74,7 @@ export class PuppeteerManager {
     /**
      * Closes the browser instance and frees up resources
      */
-    public close(): Promise<void> {
+    public dispose(): Promise<void> {
         return new Promise((resolve): void => {
             if (this.browser === null) {
                 resolve();
