@@ -64,11 +64,23 @@ export class PuppeteerManager {
         launchOptions: puppeteer.LaunchOptions = PUPPETEER_MANAGER_DEFAULT_LAUNCH_OPTIONS,
     ): Promise<void> {
         return new Promise((resolve): void => {
-            puppeteer.launch(launchOptions).then((browser: puppeteer.Browser): void => {
-                this.browser = browser;
+            if (this.isInit) {
                 resolve();
-            });
+            } else {
+                puppeteer.launch(launchOptions).then((browser: puppeteer.Browser): void => {
+                    this.browser = browser;
+                    this.isInit = true;
+                    resolve();
+                });
+            }
         });
+    }
+
+    /**
+     * Lets you know if this manager has been initialized
+     */
+    public isInitialized(): boolean {
+        return this.isInit;
     }
 
     /**

@@ -1,6 +1,6 @@
 {
   "name": "request-group-puppeteer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simplifies requesting for puppeteer instances and sending mulitple puppeteer request at the same time",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
