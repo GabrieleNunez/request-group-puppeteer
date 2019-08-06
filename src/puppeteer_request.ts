@@ -4,7 +4,7 @@ import * as moment from 'moment';
 import * as puppeteer from 'puppeteer';
 
 /**
- * This class simplifies creatinga puppeteer request and linking it to a puppeteer manager.
+ * This class simplifies creating puppeteer request and linking it to a puppeteer manager.
  * Can additionally tie into the request-group library and be batched out
  */
 export class PuppeteerRequest extends BaseWebRequest<puppeteer.Page> {
@@ -32,6 +32,10 @@ export class PuppeteerRequest extends BaseWebRequest<puppeteer.Page> {
                 resolve();
             });
         });
+    }
+
+    public getManager(): PuppeteerManager {
+        return this.puppeteerManager;
     }
 
     /**
