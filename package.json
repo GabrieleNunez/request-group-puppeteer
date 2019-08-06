@@ -34,6 +34,11 @@
     "url": "https://github.com/GabrieleNunez/request-group-puppeteer/issues"
   },
   "homepage": "https://github.com/GabrieleNunez/request-group-puppeteer#readme",
+  "files": [
+      "/dist",
+      "/LICENSE",
+      "/readme.md"
+  ],
   "keywords": [
     "puppeteer",
     "request",
