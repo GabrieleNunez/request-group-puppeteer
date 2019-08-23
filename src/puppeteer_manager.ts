@@ -91,10 +91,16 @@ export class PuppeteerManager {
             if (this.browser === null) {
                 resolve();
             } else {
-                (this.browser as puppeteer.Browser).close().then((): void => {
-                    this.browser = null;
-                    resolve();
-                });
+                (this.browser as puppeteer.Browser)
+                    .close()
+                    .then((): void => {
+                        this.browser = null;
+                        resolve();
+                    })
+                    .catch((): void => {
+                        // this behavior will change in the future, for now there is nothing we can do about it
+                        resolve();
+                    });
             }
         });
     }

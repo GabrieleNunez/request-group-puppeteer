@@ -28,9 +28,20 @@ export class PuppeteerRequest extends BaseWebRequest<puppeteer.Page> {
      */
     public dispose(): Promise<void> {
         return new Promise((resolve): void => {
-            (this.pageData as puppeteer.Page).close().then((): void => {
+            if (this.pageData !== null) {
+                (this.pageData as puppeteer.Page)
+                    .close()
+                    .then((): void => {
+                        this.pageData = null;
+                        resolve();
+                    })
+                    .catch((): void => {
+                        // this behavior will change in the future. I just need to determine the best ways to handle these kind of errors in an intuitive way
+                        resolve();
+                    });
+            } else {
                 resolve();
-            });
+            }
         });
     }
 
